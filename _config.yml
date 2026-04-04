@@ -1,0 +1,14 @@
+title: "Vibe Coding & Investing"
+description: "AI와 함께 투자 전략을 만들고, 실전에 적용하는 과정을 투명하게 공유합니다."
+baseurl: "/blog"
+url: "https://stolenfocus.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+lang: ko
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
