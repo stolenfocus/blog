@@ -2,7 +2,7 @@
 layout: post
 title: "Week 1 — 6종 ETF 포트폴리오, 첫 주 결과"
 date: 2026-04-08
-categories: [investing, etf, weekly-report]
+categories: [investing, etf]
 ---
 
 > 4월 1일에 시작한 부모님 연금저축 ETF 실험. 첫 1주차 기록.
