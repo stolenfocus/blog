@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "엄빠 연금 운용 재설계 — 그리고 발견한 백테 버그 두 개"
-date: 2026-04-16
+date: 2026-04-17
 categories: [investing, etf, vibe-coding]
 ---
 
