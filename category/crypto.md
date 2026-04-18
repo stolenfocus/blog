@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "코인 — BTC 가변 DCA"
+title: "코인"
 permalink: /category/crypto/
 ---
 
@@ -17,11 +17,3 @@ permalink: /category/crypto/
 {% for post in site.categories.crypto %}{% if post.tags contains 'btc-dca' %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endif %}{% endfor %}
-
----
-
-### 전체 글
-
-{% for post in site.categories.crypto %}
-- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-{% endfor %}

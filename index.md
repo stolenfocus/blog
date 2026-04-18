@@ -12,14 +12,6 @@ layout: default
 
 ---
 
-## ETF 전략 — 부모님 연금저축
-
-{% for post in site.categories.etf %}
-- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-{% endfor %}
-
----
-
 ## 배당 포트폴리오
 
 {% for post in site.categories.dividend %}
@@ -36,7 +28,7 @@ layout: default
 
 ---
 
-## 코인 — BTC 가변 DCA
+## 코인
 
 {% for post in site.categories.crypto %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
@@ -47,5 +39,13 @@ layout: default
 ## 연금 포트폴리오
 
 {% for post in site.categories.pension %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+{% endfor %}
+
+---
+
+## 부모님 연금저축 ETF
+
+{% for post in site.categories.etf %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endfor %}
