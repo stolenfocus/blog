@@ -3,6 +3,7 @@ layout: post
 title: "부모님 연금저축에 ETF 6종 포트폴리오를 짜기까지 — AI와 함께한 전 과정"
 date: 2026-04-04
 categories: [investing, etf, vibe-coding]
+tags: [strategy]
 ---
 
 > 부모님의 연금저축 계좌. AI(Claude)와 대화하면서 전략을 짜고, 백테스트하고, 실전에 적용했습니다. 실수 포함 전 과정을 가감 없이 공유합니다.

@@ -3,6 +3,7 @@ layout: post
 title: "Week 2 — 6종 ETF 포트폴리오 주간 리포트"
 date: 2026-04-15
 categories: [investing, etf]
+tags: [weekly]
 ---
 
 > 부모님 연금저축 ETF 실험 — 2주차 기록.

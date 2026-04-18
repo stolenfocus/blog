@@ -12,6 +12,16 @@ layout: default
 
 ---
 
+# 내 포트폴리오
+
+## NPS 미국주식 따라하기
+
+{% for post in site.categories.nps-us %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+{% endfor %}
+
+---
+
 ## 배당 포트폴리오
 
 {% for post in site.categories.dividend %}
@@ -20,9 +30,9 @@ layout: default
 
 ---
 
-## NPS 미국주식 따라하기
+## 연금 포트폴리오
 
-{% for post in site.categories.nps-us %}
+{% for post in site.categories.pension %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endfor %}
 
@@ -36,13 +46,7 @@ layout: default
 
 ---
 
-## 연금 포트폴리오
-
-{% for post in site.categories.pension %}
-- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-{% endfor %}
-
----
+# 부모님
 
 ## 부모님 연금저축 ETF
 

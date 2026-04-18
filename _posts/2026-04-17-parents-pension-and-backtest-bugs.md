@@ -3,6 +3,7 @@ layout: post
 title: "엄빠 연금 운용 재설계 — 그리고 발견한 백테 버그 두 개"
 date: 2026-04-17
 categories: [investing, etf, vibe-coding]
+tags: [strategy]
 ---
 
 > 부모님 연금저축 6종 ETF 포폴 운용을 같이 다듬다가 백테스트 코드에서 버그를 두 개 발견했습니다. 결정 자체는 안 바뀌었지만 과정과 함께 기록합니다.
