@@ -3,6 +3,7 @@ layout: post
 title: "돈은 이미 움직이고 있다 — 내가 모르는 사이에 벌어진 일들"
 date: 2026-04-18
 categories: [investing, crypto]
+tags: [tokenization]
 ---
 
 [2편](/blog/investing/crypto/2026/04/18/tokenization-ecosystem-map.html)에서 토큰화 생태계의 5개 레이어 지도를 그렸다. 근데 지도만 봐서는 "이게 진짜 되고 있는 거야?" 감이 안 온다. 그래서 이번엔 **각 영역에서 실제로 돈이 얼마나, 어떻게 움직이고 있는지** 숫자로 정리해봤다.

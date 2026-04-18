@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트폴리오 전략 수립기 — Day 0: 2,721종목에서 4+1종목까지"
 date: 2026-04-12
 categories: [investing, dividend, vibe-coding]
+tags: [strategy]
 ---
 
 > 배당주 투자를 시작하기로 했습니다. AI(Claude)와 하루종일 분석한 과정을 기록합니다. 2,721종목 전수조사 → 정성평가 → 백테스트 → 최종 4+1종목 선정까지.

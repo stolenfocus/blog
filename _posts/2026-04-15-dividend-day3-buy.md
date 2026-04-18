@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트 Day 3 — 150만원 4종목 매수 + 행동할 용기"
 date: 2026-04-15
 categories: [investing, dividend, vibe-coding]
+tags: [trade]
 ---
 
 > Day 3 매수를 마쳤습니다. 숫자보다 "행동할 용기가 없었다"는 반성이 더 컸던 날입니다.

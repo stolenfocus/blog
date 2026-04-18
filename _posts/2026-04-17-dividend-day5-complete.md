@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트 Day 5 완료 — 5일 DCA 마무리와 비중 조정 삽질기"
 date: 2026-04-17
 categories: [investing, dividend, vibe-coding]
+tags: [trade]
 ---
 
 > 5일간의 초기 매수가 끝났습니다. 마지막날에 AI가 주수를 잘못 계산해서 한바탕 삽질을 했지만, 결과적으로 5종목 모두 18~21% 범위에 안착했습니다.

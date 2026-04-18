@@ -3,6 +3,7 @@ layout: post
 title: "토큰화 전체 지도 — 5개 영역과 돈의 흐름"
 date: 2026-04-18
 categories: [investing, crypto]
+tags: [tokenization]
 ---
 
 [1편](/blog/investing/crypto/2026/04/18/tokenization-what-and-why.html)에서 토큰화가 뭔지, 왜 지금인지를 정리했다. 근데 솔직히 "그래서 뭘 사야 하는데?"가 아직 안 풀렸다. 이름만 나열하면 의미 없으니까, 이번엔 **전체 구조를 지도로 그려보자.**

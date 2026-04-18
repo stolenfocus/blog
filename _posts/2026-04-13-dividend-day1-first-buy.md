@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트 Day 1 — ETF 종목 혼동 수정 + 첫 매수"
 date: 2026-04-13
 categories: [investing, dividend, vibe-coding]
+tags: [trade]
 ---
 
 > 매수 직전에 ETF 종목 혼동을 발견했습니다. 기존 보유 ETF와 백테스트에 쓴 ETF가 달랐습니다. 수정 후 첫 매수를 실행했습니다.

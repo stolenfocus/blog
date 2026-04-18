@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트 Day 4 — 삼성화재우 조기 편입과 '팔릴까'에 대한 고민"
 date: 2026-04-16
 categories: [investing, dividend, vibe-coding]
+tags: [trade]
 ---
 
 > Day 4 매수를 마쳤습니다. 오늘은 원래 플랜을 수정해 삼성화재우 1주를 먼저 넣었고, "팔고 싶을 때 과연 팔릴까"라는 유동성 고민을 남긴 날입니다.

@@ -3,6 +3,7 @@ layout: post
 title: "배당 포트 Day 2 — 종목 불일치 버그 3건 수정 + 자동매매 구현"
 date: 2026-04-14
 categories: [investing, dividend, vibe-coding]
+tags: [trade]
 ---
 
 > Day 2 매수를 하려는데 종목이 이상합니다. 파고 들어가니 버그가 3개나 나왔습니다. 전부 고치고 자동매매까지 붙인 기록입니다.

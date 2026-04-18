@@ -3,6 +3,7 @@ layout: post
 title: "토큰화(Tokenization) — 감은 있는데 확신이 없어서 공부를 시작했다"
 date: 2026-04-18
 categories: [investing, crypto]
+tags: [tokenization]
 ---
 
 ## 왜 이걸 공부하기 시작했나
