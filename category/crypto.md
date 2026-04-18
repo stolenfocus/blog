@@ -4,7 +4,6 @@ title: "코인"
 permalink: /category/crypto/
 ---
 
-# 코인
 
 ## 토큰화 시리즈
 
