@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "부모님 연금저축 ETF"
 permalink: /category/etf/
 ---

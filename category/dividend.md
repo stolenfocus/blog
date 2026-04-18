@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "배당 포트폴리오"
 permalink: /category/dividend/
 ---

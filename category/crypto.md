@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "코인"
 permalink: /category/crypto/
 ---

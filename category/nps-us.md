@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "NPS 미국주식 따라하기"
 permalink: /category/nps-us/
 ---

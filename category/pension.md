@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: "연금 포트폴리오"
 permalink: /category/pension/
 ---
