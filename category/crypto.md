@@ -8,9 +8,10 @@ permalink: /category/crypto/
 
 ## 토큰화 시리즈
 
-{% for post in site.categories.crypto %}{% if post.tags contains 'tokenization' %}
+{% assign token_posts = site.categories.crypto | where_exp: "post", "post.tags contains 'tokenization'" | sort: "title" %}
+{% for post in token_posts %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-{% endif %}{% endfor %}
+{% endfor %}
 
 ## BTC 가변 DCA
 

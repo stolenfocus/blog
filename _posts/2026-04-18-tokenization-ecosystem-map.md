@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토큰화 전체 지도 — 5개 영역과 돈의 흐름"
+title: "토큰화 #2 — 전체 지도: 5개 영역과 돈의 흐름"
 date: 2026-04-18
 categories: [investing, crypto]
 tags: [tokenization]

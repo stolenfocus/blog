@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "돈은 이미 움직이고 있다 — 내가 모르는 사이에 벌어진 일들"
+title: "토큰화 #3 — 돈은 이미 움직이고 있다"
 date: 2026-04-18
 categories: [investing, crypto]
 tags: [tokenization]
