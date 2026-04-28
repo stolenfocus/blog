@@ -16,14 +16,30 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign cat = page.categories | first %}
+  {% assign sorted_posts = site.categories[cat] | sort: "date" %}
+  {% assign prev_post = nil %}
+  {% assign next_post = nil %}
+  {% for p in sorted_posts %}
+    {% if p.url == page.url %}
+      {% if forloop.index0 > 0 %}
+        {% assign prev_idx = forloop.index0 | minus: 1 %}
+        {% assign prev_post = sorted_posts[prev_idx] %}
+      {% endif %}
+      {% assign next_idx = forloop.index0 | plus: 1 %}
+      {% if next_idx < sorted_posts.size %}
+        {% assign next_post = sorted_posts[next_idx] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
   <nav style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e8e8e8; font-size: 0.85em;">
-    {% if page.previous.url %}
-      <a href="{{ page.previous.url | prepend: site.baseurl }}">← {{ page.previous.title }}</a>
+    {% if prev_post %}
+      <a href="{{ prev_post.url | prepend: site.baseurl }}">← {{ prev_post.title }}</a>
     {% else %}
       <span></span>
     {% endif %}
-    {% if page.next.url %}
-      <a href="{{ page.next.url | prepend: site.baseurl }}" style="text-align: right;">{{ page.next.title }} →</a>
+    {% if next_post %}
+      <a href="{{ next_post.url | prepend: site.baseurl }}" style="text-align: right;">{{ next_post.title }} →</a>
     {% else %}
       <span></span>
     {% endif %}
