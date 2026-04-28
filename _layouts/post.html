@@ -16,7 +16,11 @@ layout: default
     {{ content }}
   </div>
 
-  {% assign cat = page.categories | first %}
+  {% if page.categories.size > 1 %}
+    {% assign cat = page.categories[1] %}
+  {% else %}
+    {% assign cat = page.categories | first %}
+  {% endif %}
   {% assign sorted_posts = site.categories[cat] | sort: "date" %}
   {% assign prev_post = nil %}
   {% assign next_post = nil %}
