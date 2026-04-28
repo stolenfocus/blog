@@ -11,9 +11,9 @@ categories: [investing, nps-us, vibe-coding]
 
 ## 왜 다시 검증했나
 
-이전 글([NPS 모멘텀 전략 재검증](/investing/nps-us/vibe-coding/2026/04/15/nps-momentum-validation.html))에서 Top30+3mo 전략을 확정했었는데, 한 가지 빠진 게 있었습니다. **다른 파라미터 조합과 체계적으로 비교를 안 했다는 것.**
+이전 글([NPS 모멘텀 전략 재검증](/investing/nps-us/vibe-coding/2026/04/15/nps-momentum-validation.html))에서 Top30+3mo 전략을 확정했었는데, 이번에 **동일 조건(모멘텀 필터 포함, 최신 Q4 데이터)에서 파라미터 조합을 다시 비교**해봤습니다.
 
-모멘텀 기간을 3개월 대신 6개월로? Top30 대신 Top20이면? 이런 질문들에 데이터로 답해보기로 했습니다.
+이전에도 Top N 비교를 했지만 모멘텀 기간 변형까지 포함한 조합 탐색은 처음입니다. 3개월 대신 6개월? Top30 대신 Top20? 롤링 윈도우로 안정성까지 검증하면 어떤 결과가 나올까?
 
 ---
 
