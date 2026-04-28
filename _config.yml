@@ -13,6 +13,7 @@ header_pages:
   - category/pension.md
   - category/crypto.md
   - category/etf.md
+  - category/satellite.md
 future: true  # KST 자정~09시 작성 시 UTC 기준 미래 글 필터 회피
 defaults:
   - scope:
