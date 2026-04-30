@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "위성 트레이딩 Day 2 — 첫 실전 매수, 반도체에 올인"
+title: "위성 트레이딩 Day 2 — 첫 실전 매수, KODEX 반도체 1주"
 date: 2026-04-30
 categories: [investing, satellite]
 tags: [satellite, swing-trading, sector-etf, daily-log]
