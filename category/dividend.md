@@ -11,6 +11,12 @@ permalink: /category/dividend/
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endif %}{% endfor %}
 
+## 월간 DCA
+
+{% for post in site.categories.dividend %}{% if post.tags contains 'dca' %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+{% endif %}{% endfor %}
+
 ## 매수/매도 기록
 
 {% for post in site.categories.dividend %}{% if post.tags contains 'trade' %}
