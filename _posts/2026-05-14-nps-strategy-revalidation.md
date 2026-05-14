@@ -2,8 +2,8 @@
 layout: post
 title: "NPS 미국주식 전략 전면 재검증 — 왜 Top20을 버렸나"
 date: 2026-05-14
-categories: [investing, nps, strategy]
-tags: [backtest, validation, nps]
+categories: [investing, nps-us]
+tags: [backtest, validation, strategy]
 ---
 
 > 2026-05-12 NPS Q1 2026 13F 공시 후 기존 전략 (Top20+6mo) 신뢰성 의심.
