@@ -49,48 +49,53 @@ tags: [satellite, stop-loss, kis-api, system-design, post-mortem]
 
 ---
 
-## Fix — 매분 cron 도입
-
-원래는:
-
-```cron
-0 14 * * 1-5  stoploss_check  # 하루 1번
-```
-
-변경:
-
-```cron
-* 9-14 * * 1-5  stoploss_check  # 매분 09:00~14:59
-0-20 15 * * 1-5  stoploss_check  # 15:00~15:20
-```
-
-09:00~15:20 사이 **매 1분마다** stop 체크. 5시간 갭이 1분 갭으로.
-
-10:22에 cron 설치 → 10:23 첫 trigger → 가격 ₩15,560 (stop ₩15,922 아래) 감지 → 즉시 시장가 매도.
-
-```
-2026-05-20T10:23:07 SELL 117460 KODEX 에너지화학 8주 @ ₩15,560
-  → 실현 -7.16% / -₩9,600
-```
-
-설치 1분 만에 손절 발동. 시스템 작동.
-
----
-
-## 그런데 1분 갭도 정답 아님
+## 옵션 비교
 
 진짜 stop loss는 **실시간**이어야 한다. KIS Open API의 한계:
 
 | 옵션 | 갭 | 작업량 | 비고 |
 |---|---|---|---|
 | 14:00 단일 cron (구) | 5시간 | — | 사실상 stop 아님 |
-| **매 1분 cron (현)** | 1분 | 15분 | 거의 OK, 1분 사이 큰 폭락 시 못 잡음 |
-| KIS WebSocket | 1초 이내 | 반나절 | 진짜 stop. 다음 iteration |
+| 매 1분 cron | 1분 | 15분 | 1분 사이 큰 폭락 시 못 잡음 |
+| **KIS WebSocket** | ~1초 | 반나절 | 정답 |
 | 거래소 조건부 매도 | 0초 | — | **KIS Open API 미지원** ❌ |
 
-마지막 줄이 충격이었다. 한투 앱 UI엔 "스톱주문" 메뉴 있는데 Open API로는 노출 안 됨. 자동화 못 함.
+마지막 줄이 충격이었다. 한투 앱 UI엔 "스톱주문" 메뉴 있는데 Open API로는 노출 안 됨. 자동매매 시스템에서 "stop loss = 거래소 자동 트리거" 라고 가정한 게 처음부터 틀렸음.
 
-자동매매 시스템 만들 때 "stop loss = 거래소 자동 트리거" 라고 가정한 게 처음부터 틀렸음. 우리가 직접 모니터링하고 직접 매도 fire 해야 함.
+직접 모니터링하고 직접 매도 fire 해야 함. → 결국 WebSocket이 답.
+
+---
+
+## Fix — KIS WebSocket 데몬
+
+처음엔 매분 cron(중간 해결책)을 먼저 깔았다가 다시 갈아엎고 WebSocket으로 직행했다. 1분 갭도 갭이고 cron 2개 돌리는 게 cluttery.
+
+```python
+# satellite/realtime_stoploss.py (요약)
+kis = PyKis(..., use_websocket=True)
+stock = kis.stock(ticker)
+ticket = stock.on("price", on_price_event)
+
+def on_price_event(sender, e):
+    price = int(e.response.price)
+    if price <= stop_price:
+        fire_market_sell(position)
+```
+
+launchd로 데몬화:
+- `~/Library/LaunchAgents/com.satellite.realtime-stoploss.plist`
+- `KeepAlive=true` (자동 재시작)
+- `ThrottleInterval=30` (재시작 폭주 방지)
+- `RunAtLoad=true` (부팅 시 시작)
+
+`positions.json`을 10초마다 watch → 새 포지션 생기면 자동 구독, 만기/손절로 사라지면 unsubscribe. 매수 cron이 별도 프로세스라도 자동 동기화.
+
+**Live test:**
+- 삼성전자(005930) 구독 → 12초 동안 25틱 수신 ✓
+- 가격 변동 latency ~500ms
+- WebSocket 끊김 시 PyKis가 자동 reconnect + subscriptions 복원
+
+`2026-05-19 stop touch` 같은 사고는 이제 1초 안에 잡힌다.
 
 ---
 
@@ -117,7 +122,7 @@ tags: [satellite, stop-loss, kis-api, system-design, post-mortem]
 
 2. **외부 API의 한계는 직접 검증해야 함.** KIS Open API에 stop order 있을 거라 가정하고 시스템 설계 → 가정이 틀려서 5시간 갭.
 
-3. **이상과 현실 사이 점진 개선.** 5시간 → 1분 → 1초 (WebSocket). 한 번에 완벽 못 만들어도 갭 줄이는 게 진보.
+3. **중간 해결책에 안주하지 말 것.** 매분 cron(1분 갭)으로 일단 깔까 했다가 결국 WebSocket으로 직행. 어차피 갈 곳이면 한 번에 가는 게 낫다.
 
 4. **표본 4건으로 시스템 판단 X.** 백테 EV가 +면 단기 누적 손실은 노이즈. 단, 시스템 *결함*은 빨리 fix.
 
@@ -125,8 +130,8 @@ tags: [satellite, stop-loss, kis-api, system-design, post-mortem]
 
 ## 다음 step
 
-- [ ] KIS WebSocket 기반 실시간 stop loss (Step 2, ~반나절 작업)
-- [ ] stoploss 알림 정리 (매분 cron이 포지션 알림 spam → 14:00에만 일일 요약 발송으로 fix 완료)
+- [x] ~~매분 cron stoploss~~ (intermediate, 결국 폐기)
+- [x] KIS WebSocket 기반 실시간 stop loss (`realtime_stoploss.py` + launchd 데몬)
 - [ ] 추후 표본 늘어나면 stop 임계 (-5%) 재검증
 
 ---
