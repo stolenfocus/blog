@@ -3,6 +3,7 @@ layout: post
 title: "Week 4 — 부모님 연금 ETF 주간 리포트"
 date: 2026-04-24
 categories: [investing, etf]
+tags: [weekly]
 ---
 
 > 부모님 연금저축 ETF 실험 — 4주차 기록.

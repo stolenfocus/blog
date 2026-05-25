@@ -3,6 +3,7 @@ layout: post
 title: "Week 3 — ISA 배당 포트 주간 리포트"
 date: 2026-05-08
 categories: [investing, dividend]
+tags: [weekly]
 ---
 
 > ISA 배당 포트폴리오 — 3주차 기록.

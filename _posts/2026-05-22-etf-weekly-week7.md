@@ -3,6 +3,7 @@ layout: post
 title: "Week 7 — 부모님 연금 ETF 주간 리포트"
 date: 2026-05-22
 categories: [investing, etf]
+tags: [weekly]
 ---
 
 > 부모님 연금저축 ETF 실험 — 7주차 기록.
