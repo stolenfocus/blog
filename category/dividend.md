@@ -22,3 +22,9 @@ permalink: /category/dividend/
 {% for post in site.categories.dividend %}{% if post.tags contains 'trade' %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endif %}{% endfor %}
+
+## 주간 리포트
+
+{% for post in site.categories.dividend %}{% if post.tags contains 'weekly' %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+{% endif %}{% endfor %}

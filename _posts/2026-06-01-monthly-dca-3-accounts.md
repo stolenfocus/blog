@@ -2,8 +2,8 @@
 layout: post
 title: "6월 월 적립 — 부모님 2계좌 + 내 ISA, 그리고 T+2의 함정"
 date: 2026-06-01
-categories: [investing, dca]
-tags: [monthly, parents, isa, dividend, etf]
+categories: [investing, etf, dividend]
+tags: [monthly, parents, isa, dividend, etf, dca]
 ---
 
 > 매월 1일 자동 DCA 데이.
