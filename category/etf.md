@@ -22,3 +22,16 @@ permalink: /category/etf/
 {% for post in site.categories.etf %}{% if post.tags contains 'weekly' %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endif %}{% endfor %}
+
+## 기타 / 전체 글
+
+{% assign known_tags = "strategy,dca,weekly" | split: "," %}
+{% for post in site.categories.etf %}
+  {% assign show = true %}
+  {% for t in known_tags %}
+    {% if post.tags contains t %}{% assign show = false %}{% endif %}
+  {% endfor %}
+  {% if show %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+  {% endif %}
+{% endfor %}

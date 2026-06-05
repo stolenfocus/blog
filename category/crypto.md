@@ -17,3 +17,16 @@ permalink: /category/crypto/
 {% for post in site.categories.crypto %}{% if post.tags contains 'btc-dca' %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
 {% endif %}{% endfor %}
+
+## 기타 / 전체 글
+
+{% assign known_tags = "tokenization,btc-dca" | split: "," %}
+{% for post in site.categories.crypto %}
+  {% assign show = true %}
+  {% for t in known_tags %}
+    {% if post.tags contains t %}{% assign show = false %}{% endif %}
+  {% endfor %}
+  {% if show %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }}) <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+  {% endif %}
+{% endfor %}
